@@ -22,8 +22,8 @@ return {
         },
       },
       lualine_c = { "pretty_path" },
-      lualine_X = { "encoding", "fileformat", "filetype" },
-      lualine_Y = { "lsp_status" },
+      lualine_x = { "encoding", "fileformat", "filetype" },
+      lualine_y = { "lsp_status" },
       lualine_z = { "location" },
     },
     inactive_sections = {
@@ -33,6 +33,6 @@ return {
       lualine_x = {},
       lualine_y = {},
       lualine_z = {},
-    }
+    },
   },
 }

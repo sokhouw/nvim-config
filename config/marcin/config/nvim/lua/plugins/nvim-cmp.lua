@@ -22,7 +22,7 @@ return {
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
-          end
+          end,
         },
         formatting = {
           format = require("lspkind").cmp_format({
@@ -48,7 +48,7 @@ return {
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(-4),
+          ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
@@ -86,9 +86,11 @@ return {
         sources = cmp.config.sources({
           { name = "path" }
         }, {
-          name = "cmdline",
-          option = {
-            ignore_cmds = { "Man", "!" }
+          {
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" }
+            }
           }
         })
       })

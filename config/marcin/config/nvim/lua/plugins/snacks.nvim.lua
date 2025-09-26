@@ -10,13 +10,13 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    animate = { enabled = true },
-    -- bigfile = { enabled = true },
-    -- bufdelete = { enabled = true },
+    animate = { enabled = true }, -- Efficient animations including over 45 easing functions (library)
+    -- bigfile = { enabled = true }, -- Deal with big files
+    -- bufdelete = { enabled = true }, -- Delete buffers without disrupting window layout
     dashboard = {
       enabled = true,
       highlights = {
-        header = { fg = "#ff9e64" }
+        header = { fg = "#ff9e64" }, -- Replace with your desired color
       },
       present = {
         header = header
@@ -32,7 +32,7 @@ return {
     -- debug = { enabled = true },
     -- dim = { enabled = true },
     explorer = { enabled = true }, -- A file explorer (picker in disguise)
-    git = { 
+    git = {
       enabled = true,
       highlights = {
         directory = "Normal"
@@ -59,7 +59,7 @@ return {
       },
       animate = {
         enabled = true,
-        style = "down", 
+        style = "down",
         duration = {
           step = 5,
           total = 50,
@@ -99,7 +99,7 @@ return {
     -- scope = { enabled = true }, -- Scope detection, text object and jumping based on treesitter or indent
     -- scratch = { enabled = true }, -- Scratch buffers with persistent file
     scroll = { enabled = true }, -- Smooth scrolling
-    -- status column { enabled = true }, 
+    -- status column { enabled = true },
     terminal = {
       enabled = true,
       win = {
@@ -222,7 +222,7 @@ return {
             dd(...)
           end
         else
-          vim.print = _G.dd 
+          vim.print = _G.dd
         end
 
         -- Create some toggle mappings
