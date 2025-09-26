@@ -1,6 +1,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
+    -- event = "LazyFile",
     opts = {
       signs = {
         add = { text = "▎" },
@@ -36,13 +37,13 @@ return {
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else
-            gs.nav_hunk("next")
+            gs.nav_hunk("prev")
           end
         end, "Prev Hunk")
         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
         map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
         map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-        map({ "n", "V" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
+        map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
         map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
@@ -51,11 +52,11 @@ return {
         map("n", "<leader>ghB", function() gs.blame() end, "Blame Buffer")
         map("n", "<leader>ghd", gs.diffthis, "Diff This")
         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns Select Hunk")
-      end
-    }
+        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+      end,
+    },
   },
-  { 
+  {
     "gitsigns.nvim",
     opts = function()
       Snacks.toggle({
@@ -65,8 +66,8 @@ return {
         end,
         set = function(state)
           require("gitsigns").toggle_signs(state)
-        end
+        end,
       }):map("<leader>uG")
-    end
-  }
+    end,
+  },
 }

@@ -11,7 +11,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "onsails/lspkind.nvim",
-      "ray-x/cmd-treesitter",
+      "ray-x/cmp-treesitter",
       "L3MON4D3/LuaSnip",
     },
     event = "InsertEnter",
@@ -50,7 +50,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(-4),
           ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmd.ConfirmBehavior.Replace,
+            behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }),
           ["<Tab>"] = cmp.mapping(function(fallback)
@@ -81,7 +81,7 @@ return {
           { name = "treesitter" },
         })
       })
-      cmd.setup.cmdline(":", {
+      cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
           { name = "path" }
