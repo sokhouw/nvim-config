@@ -18,7 +18,7 @@ return {
       highlights = {
         header = { fg = "#ff9e64" }, -- Replace with your desired color
       },
-      present = {
+      preset = {
         header = header
       },
       sections = {
@@ -27,18 +27,18 @@ return {
         { section = "recent_files", icon = " ", title = "Recent Files", indent = 2, padding = { 2, 2 } },
         { section = "projects", icon = " ", title = "Projects", indent = 2, padding = 2 },
         { section = "startup" },
-      }
+      },
     },
-    -- debug = { enabled = true },
-    -- dim = { enabled = true },
+    -- debug = { enabled = true }, -- Pretty inspect & backtraces for debugging
+    -- dim = { enabled = true }, -- Focus on the active scope by dimming the rest
     explorer = { enabled = true }, -- A file explorer (picker in disguise)
     git = {
       enabled = true,
       highlights = {
-        directory = "Normal"
-      }
+        directory = "Normal",
+      },
     },
-    -- gitbrowse = { enabled = true }, -- Open current file, branch, commit, or repo in browser (e.g. GitHub, HitLab, Bitbucket)
+    -- gitbrowse = { enabled = true }, -- Open the current file, branch, commit, or repo in a browser (e.g. GitHub, GitLab, Bitbucket)
     -- image = { enabled = true }, -- Image viewer using Kitty Graphics Protocol, supported by kitty, wezterm and ghostty
     indent = {
       enabled = true,
@@ -46,7 +46,7 @@ return {
       indent = {
         enabled = true,
         only_scope = false, -- only show indent guides of the scope
-        only_current = false, -- only show indent guies in the current window
+        only_current = false, -- only show indent guides in the current window
         char = "┊",
         hl = "SpecialComment",
       },
@@ -63,15 +63,16 @@ return {
         duration = {
           step = 5,
           total = 50,
-        }
+        },
       },
     },
-    -- input = { enabled = true }, -- Beter vim.ui.input
+    -- input = { enabled = true }, -- Better vim.ui.input
     -- layout = { enabled = true }, -- Window layouts
     -- lazygit = { enabled = true }, -- Open LazyGit in a float, auto-configure colorscheme and integration with Neovim
     notifier = {
-      enabled = true
+      enabled = true,
     },
+    -- notify = { enabled = true }, -- Utility functions to work with Neovim's vim.notify
     picker = {
       enabled = true,
       layout = "ivy",
@@ -91,26 +92,26 @@ return {
             ["<Tab>"] = { "cycle_win", mode = { "n", "i" } }
           },
         },
-      }
+      },
     },
     -- profiler = { enabled = true }, -- Neovim lua profiler
-    -- quickfile = { enabled = true }, -- Render newly open file as quickly as possible, before loading plugins
+    -- quickfile = { enabled = true }, -- Render newly open files as quickly as possible, before loading plugins.
     -- rename = { enabled = true }, -- LSP-integrated file renaming
-    -- scope = { enabled = true }, -- Scope detection, text object and jumping based on treesitter or indent
-    -- scratch = { enabled = true }, -- Scratch buffers with persistent file
+    -- scope = { enabled = true }, -- Scope detection, text objects and jumping based on treesitter or indent
+    -- scratch = { enabled = true }, -- Scratch buffers with a persistent file
     scroll = { enabled = true }, -- Smooth scrolling
-    -- status column { enabled = true },
+    -- statuscolumn = { enabled = true },
     terminal = {
       enabled = true,
       win = {
-        height = 0.2
+        height = 0.2,
       }
     },
-    -- togle = { enabled = true }, --
-    -- util = { enabled = true }, -- Utility functions for Snacks
-    -- win = { enabled = true }, -- Create and manage floating windows and splits
+    -- toggle = { enabled = true }, -- Toggle keymaps integrated with which-key icons / colors
+    -- util = { enabled = true }, -- Utility functions for Snacks (library)
+    -- win = { enabled = true }, -- Create and manage floating windows or splits
     words = { enabled = true }, -- Auto-show LSP references and quickly navigate between them
-    -- zen = { enabled = true }, -- Zen mode + distraction-free coding
+    -- zen = { enabled = true }, -- Zen mode, distraction-free coding
   },
   keys = {
     -- Top Pickers & Explorer
